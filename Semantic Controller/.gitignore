@@ -1,0 +1,7 @@
+__pycache__/
+.idea/
+/file.json
+
+/VirtualCapabilities/
+!/VirtualCapabilities/AbstractVirtualCapability.py
+!/VirtualCapabilities/VirtualCapabilityFactory.py

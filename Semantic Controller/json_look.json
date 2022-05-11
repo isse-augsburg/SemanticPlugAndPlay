@@ -1,0 +1,230 @@
+[
+  {
+    "properties": [
+      {
+        "name": "name",
+        "description": "the name (aka rdfs:label)",
+        "value": {
+          "object": "DHT_11",
+          "valueType": "STRING"
+        }
+      },
+      {
+        "name": "description",
+        "description": "the description (aka rdfs:comment)",
+        "value": {
+          "object": "A DHT-11 combined temperature and relative humidity sensor.",
+          "valueType": "STRING"
+        }
+      },
+      {
+        "name": "DHT11_TempRegion",
+        "description": "This defines the min and max of the temperaturesensor on the dht11",
+        "value": {
+          "object": "0 to 50 degrees Celcius",
+          "valueType": "STRING"
+        }
+      },
+      {
+        "name": "DHT11_TimeNeeded",
+        "description": "This specifies the time needed to get a new Sensor Value",
+        "value": {
+          "object": "1 second",
+          "valueType": "STRING"
+        }
+      }
+    ],
+    "capabilities": [
+      {
+        "properties": [
+          {
+            "name": "name",
+            "description": "the name (aka rdfs:label)",
+            "value": {
+              "object": "MeasureHumidityCapability",
+              "valueType": "STRING"
+            }
+          },
+          {
+            "name": "description",
+            "description": "the description (aka rdfs:comment)",
+            "value": {
+              "object": "This capability is for measuring relative humidity.",
+              "valueType": "STRING"
+            }
+          },
+          {
+            "name": "Measuring",
+            "description": "The funcionality to measure things.",
+            "value": {
+              "object": "Measurefunctionality",
+              "valueType": "STRING"
+            }
+          }
+        ],
+        "sendCommand": {
+          "message": "measureHumidity()",
+          "variables": [],
+          "properties": [
+            {
+              "name": "name",
+              "description": "the name (aka rdfs:label)",
+              "value": {
+                "object": "MeasureHumidityCommand",
+                "valueType": "STRING"
+              }
+            },
+            {
+              "name": "description",
+              "description": "the description (aka rdfs:comment)",
+              "value": {
+                "object": "With this a humidity measuring can be triggered.",
+                "valueType": "STRING"
+              }
+            }
+          ]
+        },
+        "receiveCommand": {
+          "message": "humidMeasured(double_param)",
+          "variables": [
+            {
+              "key": "double_param",
+              "valueType": "DOUBLE",
+              "properties": [
+                {
+                  "name": "name",
+                  "description": "the name (aka rdfs:label)",
+                  "value": {
+                    "object": "DoubleVariable",
+                    "valueType": "STRING"
+                  }
+                },
+                {
+                  "name": "description",
+                  "description": "the description (aka rdfs:comment)",
+                  "value": {
+                    "object": "This Variable represents a double parameter for functions",
+                    "valueType": "STRING"
+                  }
+                }
+              ]
+            }
+          ],
+          "properties": [
+            {
+              "name": "name",
+              "description": "the name (aka rdfs:label)",
+              "value": {
+                "object": "MeasureHumidityAnswer",
+                "valueType": "STRING"
+              }
+            },
+            {
+              "name": "description",
+              "description": "the description (aka rdfs:comment)",
+              "value": {
+                "object": "This is the result of a humidity measurement",
+                "valueType": "STRING"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "properties": [
+          {
+            "name": "name",
+            "description": "the name (aka rdfs:label)",
+            "value": {
+              "object": "MeasureTemperatureCapability",
+              "valueType": "STRING"
+            }
+          },
+          {
+            "name": "description",
+            "description": "the description (aka rdfs:comment)",
+            "value": {
+              "object": "The Capability to trigger and receive Measurements of Temperature",
+              "valueType": "STRING"
+            }
+          },
+          {
+            "name": "Measuring",
+            "description": "The funcionality to measure things.",
+            "value": {
+              "object": "Measurefunctionality",
+              "valueType": "STRING"
+            }
+          }
+        ],
+        "sendCommand": {
+          "message": "measureTemperature()",
+          "variables": [],
+          "properties": [
+            {
+              "name": "name",
+              "description": "the name (aka rdfs:label)",
+              "value": {
+                "object": "MeasureTemperatureCommand",
+                "valueType": "STRING"
+              }
+            },
+            {
+              "name": "description",
+              "description": "the description (aka rdfs:comment)",
+              "value": {
+                "object": "With this a Temperature Measuring can be triggered.",
+                "valueType": "STRING"
+              }
+            }
+          ]
+        },
+        "receiveCommand": {
+          "message": "tempMeasured(double_param)",
+          "variables": [
+            {
+              "key": "double_param",
+              "valueType": "DOUBLE",
+              "properties": [
+                {
+                  "name": "name",
+                  "description": "the name (aka rdfs:label)",
+                  "value": {
+                    "object": "DoubleVariable",
+                    "valueType": "STRING"
+                  }
+                },
+                {
+                  "name": "description",
+                  "description": "the description (aka rdfs:comment)",
+                  "value": {
+                    "object": "This Variable represents a double parameter for functions",
+                    "valueType": "STRING"
+                  }
+                }
+              ]
+            }
+          ],
+          "properties": [
+            {
+              "name": "name",
+              "description": "the name (aka rdfs:label)",
+              "value": {
+                "object": "MeasureTemperatureAnswer",
+                "valueType": "STRING"
+              }
+            },
+            {
+              "name": "description",
+              "description": "the description (aka rdfs:comment)",
+              "value": {
+                "object": "This is the Result of a Temperature Measurement",
+                "valueType": "STRING"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,925 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/rosrunner/ontologies/commands"
+     xml:base="http://www.semanticweb.org/rosrunner/ontologies/commands"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:commands="http://www.semanticweb.org/rosrunner/ontologies/commands#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands">
+        <rdfs:label>command</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#hasCapability -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#hasCapability">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Dynamic_Property"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#hasProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#hasProperty">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#hasReceiveParameter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#hasReceiveParameter">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter"/>
+        <rdfs:comment>From Semantic Controller to OOD-API</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#hasSendParameter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#hasSendParameter">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter"/>
+        <rdfs:comment>From OOD-API to Semantic Controller</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#hasSubCapabilities -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#hasSubCapabilities">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasSuperCapability"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#hasSubDevices -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#hasSubDevices">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasSuperDevice"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#hasSuperCapability -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#hasSuperCapability">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#hasSuperDevice -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#hasSuperDevice">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#isType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#isType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Property"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#GitRepository -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#GitRepository"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Boolean -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Boolean">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Byte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Byte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Capability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Property"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasReceiveParameter"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasSendParameter"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasSubCapabilities"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#CommandThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Char -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Char">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#CommandThing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#CommandThing">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Device -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Device">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasCapability"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Property"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#GitRepository"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#CommandThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Double -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Double">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Dynamic_Property -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Dynamic_Property">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasCapability"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Integer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Integer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Property"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#isType"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Type"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#CommandThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#PhysicalCapability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#PhysicalCapability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#VirtualCapability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Point3D -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Point3D">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Property -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Property">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#isType"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Type"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#CommandThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Static_Property -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Static_Property">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#String -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#String">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Type -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Type">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Boolean"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Byte"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Char"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Double"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Integer"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Point3D"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#String"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#ValuePartition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#ValuePartition"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#VirtualCapability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#VirtualCapability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#CancelSpiralFlight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#CancelSpiralFlight">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#VirtualCapability"/>
+        <commands:hasReceiveParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SuccessBool"/>
+        <rdfs:comment>this cancels the finding Process</rdfs:comment>
+        <rdfs:label>CancelSpiralFlight</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#ConstiVorfuehrungDevice -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#ConstiVorfuehrungDevice">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#CancelSpiralFlight"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SpiralFlight"/>
+        <commands:GitRepository>https://github.com/TheRealSwagrid/ConstiVorfuehrungDevice.git</commands:GitRepository>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#FlyToPosition -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#FlyToPosition">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#VirtualCapability"/>
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SetISSECopterPosition"/>
+        <commands:hasReceiveParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Position3D"/>
+        <commands:hasSendParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Position3D"/>
+        <rdfs:comment>Fly to a specified Position</rdfs:comment>
+        <rdfs:label>FlyToPosition</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#GetISSECopterPosition -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#GetISSECopterPosition">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#VirtualCapability"/>
+        <commands:hasReceiveParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Position3D"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#GetTestFieldBoundaries -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#GetTestFieldBoundaries">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#VirtualCapability"/>
+        <commands:hasReceiveParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#TestFieldPointA"/>
+        <commands:hasReceiveParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#TestFieldPointB"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#GetWeight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#GetWeight">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <commands:hasReceiveParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SimpleDoubleParameter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#ISSECopterPosition -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#ISSECopterPosition">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Dynamic_Property"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#GetISSECopterPosition"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SetISSECopterPosition"/>
+        <rdfs:label>ISSECopterPosition</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#ISSE_Copter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#ISSE_Copter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#FlyToPosition"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#ISSECopterPosition"/>
+        <commands:GitRepository>https://github.com/TheRealSwagrid/ISSE_Copter.git</commands:GitRepository>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#MagnetStatus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#MagnetStatus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Dynamic_Property"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#isType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#String"/>
+            </owl:Restriction>
+        </rdf:type>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#getMagnetStatus"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#setMagnetStatus"/>
+        <rdfs:comment>The Status of the Magnet, can be off or on</rdfs:comment>
+        <rdfs:label>MagnetStatus</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#OpenSmart_Electromagnet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#OpenSmart_Electromagnet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#turnMagnetOff"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#turnMagnetOn"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#MagnetStatus"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Weight"/>
+        <rdfs:comment>A electromagnet from OpenSmart</rdfs:comment>
+        <rdfs:label>OpenSmart Electromagnet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamDetectObject -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamDetectObject">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#PhysicalCapability"/>
+        <commands:hasReceiveParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamHeight"/>
+        <commands:hasReceiveParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamSignatureNumber"/>
+        <commands:hasReceiveParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamWidth"/>
+        <commands:hasReceiveParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamXposition"/>
+        <commands:hasReceiveParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamYPosition"/>
+        <commands:hasSendParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamSignatureNumber"/>
+        <rdfs:comment>The Capability to detect an object by the pixycam</rdfs:comment>
+        <rdfs:label>PixyCamDetectObject</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamHeight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamHeight">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#isType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Integer"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamR1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamR1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamDetectObject"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Weight"/>
+        <rdfs:comment>The PixyCam https://pixycam.com/pixy-cmucam5</rdfs:comment>
+        <rdfs:label>PixyCamR1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamSignatureNumber -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamSignatureNumber">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#isType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Integer"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdfs:comment>The Signature to detect</rdfs:comment>
+        <rdfs:label>PixyCamSignatureNumber</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamWidth -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamWidth">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#isType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Integer"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamXposition -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamXposition">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#isType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Integer"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdfs:comment>The x position of the detected object</rdfs:comment>
+        <rdfs:label>PixyCamXPosition</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamYPosition -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#PixyCamYPosition">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#isType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Integer"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdfs:comment>The y position of the detected object</rdfs:comment>
+        <rdfs:label>PixyCamYPosition</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Position3D -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Position3D">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#isType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Point3D"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#SPARQLCalculateAll -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#SPARQLCalculateAll">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#PhysicalCapability"/>
+        <commands:hasReceiveParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SPARQLqueryResult"/>
+        <commands:hasSendParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SPARQLqueryResult"/>
+        <rdfs:comment>This agglomerates a specific property of all current devices</rdfs:comment>
+        <rdfs:label>SPARQLCalculateAll</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#SPARQLEndpoint -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#SPARQLEndpoint">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SPARQLCalculateAll"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SPARQLquery"/>
+        <rdfs:comment>This is a SPARQL endpoint to make this ontology searchable</rdfs:comment>
+        <rdfs:label>SPARQLEndpoint</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#SPARQLquery -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#SPARQLquery">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#PhysicalCapability"/>
+        <commands:hasReceiveParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SPARQLqueryResult"/>
+        <commands:hasSendParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SPARQLqueryResult"/>
+        <rdfs:comment>a simple SPARQL query</rdfs:comment>
+        <rdfs:label>SPARQLquery</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#SPARQLqueryResult -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#SPARQLqueryResult">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#isType"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#String"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#SearchGridDevice -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#SearchGridDevice">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SearchGridGetNextPosition"/>
+        <commands:GitRepository>https://github.com/TheRealSwagrid/SearchGridDevice.git</commands:GitRepository>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#SearchGridGetNextPosition -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#SearchGridGetNextPosition">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#VirtualCapability"/>
+        <commands:hasReceiveParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Position3D"/>
+        <commands:hasSubCapabilities rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#GetISSECopterPosition"/>
+        <commands:hasSubCapabilities rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#GetTestFieldBoundaries"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#SetISSECopterPosition -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#SetISSECopterPosition">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#VirtualCapability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#SetTestFieldBoundaries -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#SetTestFieldBoundaries">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#VirtualCapability"/>
+        <commands:hasReceiveParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#TestFieldPointA"/>
+        <commands:hasReceiveParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#TestFieldPointB"/>
+        <commands:hasSendParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#TestFieldPointA"/>
+        <commands:hasSendParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#TestFieldPointB"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#SetWeight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#SetWeight">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <commands:hasReceiveParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SimpleDoubleParameter"/>
+        <commands:hasSendParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SimpleDoubleParameter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#SimpleDoubleParameter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#SimpleDoubleParameter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#isType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Double"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#SimpleStringParameter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#SimpleStringParameter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#isType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#String"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#SpiralFlight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#SpiralFlight">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#VirtualCapability"/>
+        <commands:hasSubCapabilities rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#FlyToPosition"/>
+        <commands:hasSubCapabilities rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SearchGridGetNextPosition"/>
+        <rdfs:comment>Flies around the Testfield to find some things on the ground</rdfs:comment>
+        <rdfs:label>SpiralFlight</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#SuccessBool -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#SuccessBool">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#isType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Boolean"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdfs:comment>Returns if Capability invoked was a success</rdfs:comment>
+        <rdfs:label>SuccessBool</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#TestField -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#TestField">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#TestFieldBoundaries"/>
+        <commands:GitRepository>https://github.com/TheRealSwagrid/TestField.git</commands:GitRepository>
+        <rdfs:comment>The testfield in MRM building</rdfs:comment>
+        <rdfs:label>TestField</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#TestFieldBoundaries -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#TestFieldBoundaries">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Dynamic_Property"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#isType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Point3D"/>
+            </owl:Restriction>
+        </rdf:type>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#GetTestFieldBoundaries"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SetTestFieldBoundaries"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#TestFieldPointA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#TestFieldPointA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#isType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Point3D"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#TestFieldPointB -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#TestFieldPointB">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Parameter"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#isType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Point3D"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Weight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Weight">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Dynamic_Property"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#isType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Double"/>
+            </owl:Restriction>
+        </rdf:type>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#GetWeight"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SetWeight"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#getMagnetStatus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#getMagnetStatus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#MagnetStatus"/>
+        <commands:hasReceiveParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SimpleStringParameter"/>
+        <rdfs:comment>Getter for the MagnetSatus</rdfs:comment>
+        <rdfs:label>getMagnetStatus</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#setMagnetStatus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#setMagnetStatus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#MagnetStatus"/>
+        <commands:hasReceiveParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SimpleStringParameter"/>
+        <commands:hasSendParameter rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#SimpleStringParameter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#turnMagnetOff -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#turnMagnetOff">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <rdfs:label>turnMagnetOff</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#turnMagnetOn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#turnMagnetOn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <rdfs:label>turnMagnetOn</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Boolean"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Byte"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Char"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Double"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Integer"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#String"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

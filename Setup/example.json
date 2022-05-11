@@ -1,0 +1,48 @@
+{
+  "name":"generic_sensor",
+  "description":"This is a example for the Arduino sensors",
+  "commands":[
+    {
+      "command":"sensor",
+      "description":"get Analog Read",
+      "textfield":true
+    },{
+      "command":"stream",
+      "description":"Opens a stream with previous specified Range",
+      "textfield":true
+    },{
+      "command":"save",
+      "description":"Saves a entered String onto RAM",
+      "textfield":true
+    },{
+      "command":"del",
+      "description":"deletes a saved string",
+      "textfield":true
+    },{
+      "command":"range",
+      "description":"Gets the set range",
+      "textfield":false
+    },{
+      "command":"range",
+      "description":"sets the range with 2 integers, separated by ' '",
+      "textfield":true
+    },{
+      "command":"hertz",
+      "description":"Sets intern hz",
+      "textfield":true
+    },{
+      "command":"get",
+      "description":"gets the stored String by adress",
+      "textfield":true
+    },{
+      "command":"write",
+      "description":"Writes saved Strings into EEPROM",
+      "textfield":false
+    },{
+      "command":"load",
+      "description":"Loads saved Strings from EEPROM",
+      "textfield":false
+    }
+
+  ]
+}

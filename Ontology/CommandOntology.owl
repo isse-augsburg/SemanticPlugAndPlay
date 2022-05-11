@@ -1,0 +1,1003 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/rosrunner/ontologies/2019/8/untitled-ontology-13"
+     xml:base="http://www.semanticweb.org/rosrunner/ontologies/2019/8/untitled-ontology-13"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:commands="http://www.semanticweb.org/rosrunner/ontologies/commands#"
+     xmlns:untitled-ontology-13="http://www.semanticweb.org/rosrunner/ontologies/2019/8/untitled-ontology-13#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands">
+        <rdfs:label xml:lang="en">Command Ontology</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#hasCapability -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#hasCapability">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#hasCommand -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#hasCommand">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#hasProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#hasProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#hasSubCapability -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#hasSubCapability">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasSuperCapability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#hasSuperCapability -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#hasSuperCapability">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#hasVariables -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#hasVariables">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Variable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#isRxOrTx -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#isRxOrTx">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#RxOrTx"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#variableType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#variableType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#keyContent -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#keyContent">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#messageContent -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#messageContent">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The full content of a message as String, containing keyContent</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#propertyContent -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#propertyContent">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#variableType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#variableType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Capability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasProperty"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Property"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasSubCapability"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasCommand"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasCommand"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasSuperCapability"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Command -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Command">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasProperty"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Property"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasVariables"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Variable"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#isRxOrTx"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#RxOrTx"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Device -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Device">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasCapability"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasProperty"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Property"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Property -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Property">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#propertyContent"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#boolean"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#double"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#int"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Receive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Receive">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#RxOrTx"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Transmit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#RxOrTx -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#RxOrTx">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Receive"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Transmit"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Transmit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Transmit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#RxOrTx"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#ValuePartition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#ValuePartition"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Variable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Variable">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#hasProperty"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Property"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#keyContent"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#variableType"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Actuating -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Actuating">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Property"/>
+        <commands:propertyContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actuatingfunctionality</commands:propertyContent>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This Capability is to actuate.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actuating</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#BooleanVariable -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#BooleanVariable">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Variable"/>
+        <commands:keyContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bool_param</commands:keyContent>
+        <commands:variableType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BOOLEAN</commands:variableType>
+        <rdfs:comment>This Variable represents a boolean parameter for functions.
+Can be &quot;true&quot; or &quot;false&quot;</rdfs:comment>
+        <rdfs:label>BooleanVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#CarbonMonoxideCapabilityAnswer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#CarbonMonoxideCapabilityAnswer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:hasVariables rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#BooleanVariable"/>
+        <commands:hasVariables rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#DoubleVariable"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Tx"/>
+        <commands:messageContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CarbonDioxideMeasured(bool_param, double_param)</commands:messageContent>
+        <rdfs:comment>The result of the CO measuring.
+first is if the limit reached, second is the concentration of CO</rdfs:comment>
+        <rdfs:label>CarbonMonoxideCapabilityAnswer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#CarbonMonoxideCapabilityCommand -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#CarbonMonoxideCapabilityCommand">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Rx"/>
+        <commands:messageContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">measureCarbonDioxide()</commands:messageContent>
+        <rdfs:comment>Command to trigger CO measuring</rdfs:comment>
+        <rdfs:label>CarbonMonoxideCapabilityCommand</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#CarbonMonoxideMeasuring -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#CarbonMonoxideMeasuring">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Property"/>
+        <commands:propertyContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Measured in Percent, reaching from 0 to 1023</commands:propertyContent>
+        <rdfs:comment>This can thing can measure carbon monoxide levels</rdfs:comment>
+        <rdfs:label>CarbonMonoxideMeasuring</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#CarbonMonoxideSensorCapability -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#CarbonMonoxideSensorCapability">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#CarbonMonoxideCapabilityAnswer"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#CarbonMonoxideCapabilityCommand"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#CarbonMonoxideMeasuring"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Measuring"/>
+        <rdfs:comment>The Capability to measure carbon dioxide (CO)</rdfs:comment>
+        <rdfs:label>CarbonMonoxideSensorCapability</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#DHT11_TempRegion -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#DHT11_TempRegion">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Property"/>
+        <commands:propertyContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0 to 50 degrees Celcius</commands:propertyContent>
+        <rdfs:comment>This defines the min and max of the temperaturesensor on the dht11</rdfs:comment>
+        <rdfs:label>DHT11_TempRegion</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#DHT11_TimeNeeded -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#DHT11_TimeNeeded">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Property"/>
+        <commands:propertyContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1 second</commands:propertyContent>
+        <rdfs:comment>This specifies the time needed to get a new Sensor Value</rdfs:comment>
+        <rdfs:label>DHT11_TimeNeeded</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#DHT_11 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#DHT_11">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#MeasureHumidityCapability"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#MeasureTemperatureCapability"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#DHT11_TempRegion"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#DHT11_TimeNeeded"/>
+        <rdfs:comment>A DHT-11 combined temperature and relative humidity sensor.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DHT_11</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#DigitalLightSwitch -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#DigitalLightSwitch">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#LightSwitchCapability"/>
+        <rdfs:comment>This Device can switch a light on and off</rdfs:comment>
+        <rdfs:label>DigitalLightSwitch</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#DigitalThermostat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#DigitalThermostat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#DigitalThermostatCapability"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Actuating"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Measuring"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#TemperatureControllingProperty"/>
+        <rdfs:comment>This device can manipulate a radiator</rdfs:comment>
+        <rdfs:label>DigitalThermostat</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#DigitalThermostatAnswer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#DigitalThermostatAnswer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:hasVariables rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#IntegerVariable"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Tx"/>
+        <commands:messageContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">temperatureControlledTo(int_param)</commands:messageContent>
+        <rdfs:comment>command answer</rdfs:comment>
+        <rdfs:label>DigitalThermostatAnswer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#DigitalThermostatCapability -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#DigitalThermostatCapability">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#DigitalThermostatAnswer"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#DigitalThermostatCommand"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#TemperatureControllingProperty"/>
+        <rdfs:comment>The capability to manipulate radiators</rdfs:comment>
+        <rdfs:label>DigitalThermostatCapability</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#DigitalThermostatCommand -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#DigitalThermostatCommand">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:hasVariables rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#IntegerVariable"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Rx"/>
+        <commands:messageContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">controlTemperature(int_param)</commands:messageContent>
+        <rdfs:comment>command</rdfs:comment>
+        <rdfs:label>DigitalThermostatCommand</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#DisplayCapability -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#DisplayCapability">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#DisplayCommand"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#DisplayCommandAnswer"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Actuating"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Measuring"/>
+        <rdfs:comment>This Capability lets display things</rdfs:comment>
+        <rdfs:label>DisplayCapability</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#DisplayCommand -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#DisplayCommand">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:hasVariables rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#StringVariable"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Rx"/>
+        <commands:messageContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">display(string_param)</commands:messageContent>
+        <rdfs:comment>This Command displays a string on the screen</rdfs:comment>
+        <rdfs:label>DisplayCommand</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#DisplayCommandAnswer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#DisplayCommandAnswer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:hasVariables rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#StringVariable"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Tx"/>
+        <commands:messageContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">display_answer(string_param)</commands:messageContent>
+        <rdfs:comment>This is the Answer from the Display.</rdfs:comment>
+        <rdfs:label>DisplayAnswer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#DisplayDevice -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#DisplayDevice">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#DisplayCapability"/>
+        <rdfs:comment>This Device is a Screen, able to display things like strings</rdfs:comment>
+        <rdfs:label>DisplayDevice</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#DoubleVariable -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#DoubleVariable">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Variable"/>
+        <commands:keyContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">double_param</commands:keyContent>
+        <commands:variableType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOUBLE</commands:variableType>
+        <rdfs:comment xml:lang="en">This Variable represents a double parameter for functions</rdfs:comment>
+        <rdfs:label xml:lang="en">DoubleVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#HC-SR505 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#HC-SR505">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#PIR_Capability"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#PIR_property"/>
+        <rdfs:comment>A PIR (Pyroelectric InfraRed) sensor to detect motion.</rdfs:comment>
+        <rdfs:label>HC-SR505</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#IntegerVariable -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#IntegerVariable">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Variable"/>
+        <commands:keyContent>int_param</commands:keyContent>
+        <commands:variableType>INTEGER</commands:variableType>
+        <rdfs:comment>This Variable represents a integer parameter for functions</rdfs:comment>
+        <rdfs:label>IntegerVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#LightSwitchCapability -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#LightSwitchCapability">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#lightStatusAnswer"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#turnOnOffLight"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Actuating"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Measuring"/>
+        <rdfs:comment>This capability is for switching lights on or off</rdfs:comment>
+        <rdfs:label>LightSwitchCapability</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#MQ-7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#MQ-7">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#CarbonMonoxideSensorCapability"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#CarbonMonoxideMeasuring"/>
+        <rdfs:comment>A Carbon Monoxide sensor</rdfs:comment>
+        <rdfs:label>MQ-7</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#MeasureHumidityAnswer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#MeasureHumidityAnswer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:hasVariables rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#DoubleVariable"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Tx"/>
+        <commands:messageContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">humidMeasured(double_param)</commands:messageContent>
+        <rdfs:comment>This is the result of a humidity measurement</rdfs:comment>
+        <rdfs:label>MeasureHumidityAnswer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#MeasureHumidityCapability -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#MeasureHumidityCapability">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#MeasureHumidityAnswer"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#MeasureHumidityCommand"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Measuring"/>
+        <rdfs:comment>This capability is for measuring relative humidity.</rdfs:comment>
+        <rdfs:label>MeasureHumidityCapability</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#MeasureHumidityCommand -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#MeasureHumidityCommand">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Rx"/>
+        <commands:messageContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">measureHumidity()</commands:messageContent>
+        <rdfs:comment>With this a humidity measuring can be triggered.</rdfs:comment>
+        <rdfs:label>MeasureHumidityCommand</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#MeasureTemperatureAnswer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#MeasureTemperatureAnswer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:hasVariables rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#DoubleVariable"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Tx"/>
+        <commands:messageContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tempMeasured(double_param)</commands:messageContent>
+        <rdfs:comment xml:lang="en">This is the Result of a Temperature Measurement</rdfs:comment>
+        <rdfs:label xml:lang="en">MeasureTemperatureAnswer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#MeasureTemperatureCapability -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#MeasureTemperatureCapability">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#MeasureTemperatureAnswer"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#MeasureTemperatureCommand"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Measuring"/>
+        <rdfs:comment xml:lang="en">The Capability to trigger and receive Measurements of Temperature</rdfs:comment>
+        <rdfs:label xml:lang="en">MeasureTemperatureCapability</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#MeasureTemperatureCommand -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#MeasureTemperatureCommand">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Rx"/>
+        <commands:messageContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">measureTemperature()</commands:messageContent>
+        <rdfs:comment xml:lang="en">With this a Temperature Measuring can be triggered.</rdfs:comment>
+        <rdfs:label xml:lang="en">MeasureTemperatureCommand</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Measuring -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Measuring">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Property"/>
+        <commands:propertyContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Measurefunctionality</commands:propertyContent>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The funcionality to measure things.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Measuring</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#MoistureSensor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#MoistureSensor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#MoistureSensorCapability"/>
+        <rdfs:comment>A sensor to sense moisture in the soil</rdfs:comment>
+        <rdfs:label>MoistureSensor</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#MoistureSensorAnswer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#MoistureSensorAnswer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:hasVariables rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#DoubleVariable"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Tx"/>
+        <commands:messageContent>moisture(double_param)</commands:messageContent>
+        <rdfs:comment>The result of a moisture measurement</rdfs:comment>
+        <rdfs:label>MoistureSensorAnswer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#MoistureSensorCapability -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#MoistureSensorCapability">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#MoistureSensorAnswer"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#MoistureSensorCommand"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Measuring"/>
+        <rdfs:comment>the capability to sense soil moisture</rdfs:comment>
+        <rdfs:label>MoistureSensorCapability</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#MoistureSensorCommand -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#MoistureSensorCommand">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Rx"/>
+        <commands:messageContent>moisture()</commands:messageContent>
+        <rdfs:comment>Command to trigger soil moisture measurement</rdfs:comment>
+        <rdfs:label>MoistureSensorCommand</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#PIRAnswer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#PIRAnswer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:hasVariables rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#BooleanVariable"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Tx"/>
+        <commands:messageContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">motionDetected(bool_param)</commands:messageContent>
+        <rdfs:comment>This command signals wether there was a motion detected</rdfs:comment>
+        <rdfs:label>PIRAnswer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#PIRCommand -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#PIRCommand">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Rx"/>
+        <commands:messageContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">detectMotion()</commands:messageContent>
+        <rdfs:comment>The command to trigger the capability of a PIR sensor</rdfs:comment>
+        <rdfs:label>PIRCommand</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#PIR_Capability -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#PIR_Capability">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#PIRAnswer"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#PIRCommand"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Measuring"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#PIR_property"/>
+        <rdfs:comment>This Capability let´s know if there was a Motion detected</rdfs:comment>
+        <rdfs:label>PIR_Capability</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#PIR_property -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#PIR_property">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Property"/>
+        <commands:propertyContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">motion detected = true
+else = false</commands:propertyContent>
+        <rdfs:comment>This Device can detect Motions</rdfs:comment>
+        <rdfs:label>PIR_property</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Presenter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Presenter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#PresenterCapability"/>
+        <rdfs:comment>This Device is a Presenter for Powerpoints</rdfs:comment>
+        <rdfs:label>Presenter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#PresenterAnswer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#PresenterAnswer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:hasVariables rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#StringVariable"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Tx"/>
+        <commands:messageContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PresenterButtonPressed(string_param)</commands:messageContent>
+        <rdfs:comment>This contains the button pressed or nothing</rdfs:comment>
+        <rdfs:label>PresenterAnswer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#PresenterCapability -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#PresenterCapability">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#PresenterAnswer"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#PresenterCommand"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Measuring"/>
+        <rdfs:comment>Capability of the Presenter</rdfs:comment>
+        <rdfs:label>PresenterCapability</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#PresenterCommand -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#PresenterCommand">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Rx"/>
+        <commands:messageContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isButtonPressed()</commands:messageContent>
+        <rdfs:comment>Trigger to check if button was pressed</rdfs:comment>
+        <rdfs:label>PresenterCommand</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Rx -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Rx">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Receive"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#StringVariable -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#StringVariable">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Variable"/>
+        <commands:keyContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string_param</commands:keyContent>
+        <commands:variableType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">STRING</commands:variableType>
+        <rdfs:comment>This Variable represents a string parameter for functions</rdfs:comment>
+        <rdfs:label>StringVariable</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#TemperatureControllingProperty -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#TemperatureControllingProperty">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Property"/>
+        <commands:propertyContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ability to control the Temperature</commands:propertyContent>
+        <rdfs:comment>The property to indicate active temperature manipulation</rdfs:comment>
+        <rdfs:label>TemperatureControllingProperty</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#TemperatureSensorDevice -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#TemperatureSensorDevice">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#MeasureTemperatureCapability"/>
+        <rdfs:comment xml:lang="en">This is a Temperature Sensor</rdfs:comment>
+        <rdfs:label xml:lang="en">TemperatureSensorDevice</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#Tx -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#Tx">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Transmit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#WindowCapability -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#WindowCapability">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Capability"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#WindowCapabilityAnswer"/>
+        <commands:hasCommand rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#WindowCapabilityCommand"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Measuring"/>
+        <rdfs:comment>The capability to sense wether a window is open</rdfs:comment>
+        <rdfs:label>WindowCapability</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#WindowCapabilityAnswer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#WindowCapabilityAnswer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:hasVariables rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#BooleanVariable"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Tx"/>
+        <commands:messageContent>windowIsOpen(bool_param)</commands:messageContent>
+        <rdfs:comment>the answer if window is open</rdfs:comment>
+        <rdfs:label>WindowCapabilityAnswer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#WindowCapabilityCommand -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#WindowCapabilityCommand">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Rx"/>
+        <commands:messageContent>checkWindow()</commands:messageContent>
+        <rdfs:comment>Trigger the capability to sense window state</rdfs:comment>
+        <rdfs:label>WindowCapabilityCommand</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#WindowSensor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#WindowSensor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Device"/>
+        <commands:hasCapability rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#WindowCapability"/>
+        <commands:hasProperty rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Measuring"/>
+        <rdfs:comment>A sensor that can tell if a window is shut or open</rdfs:comment>
+        <rdfs:label>WindowSensor</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#lightStatusAnswer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#lightStatusAnswer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:hasVariables rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#BooleanVariable"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Tx"/>
+        <commands:messageContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lightIsOnOff(bool_param)</commands:messageContent>
+        <rdfs:comment>Indicates the current status of the light.
+on = true
+off = false</rdfs:comment>
+        <rdfs:label>lightStatusAnswer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rosrunner/ontologies/commands#turnOnOffLight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rosrunner/ontologies/commands#turnOnOffLight">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Command"/>
+        <commands:hasVariables rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#BooleanVariable"/>
+        <commands:isRxOrTx rdf:resource="http://www.semanticweb.org/rosrunner/ontologies/commands#Rx"/>
+        <commands:messageContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">switchLight(bool_param)</commands:messageContent>
+        <rdfs:comment>This command can turn a light on or off. 
+true = on
+false = off</rdfs:comment>
+        <rdfs:label>turnOnOffLight</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

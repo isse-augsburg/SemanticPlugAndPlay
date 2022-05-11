@@ -1,0 +1,8 @@
+{
+'isButtonPressed()': 
+{
+	'callback_number': 0, 
+	'send': '', 
+	'receive': 'string_param', 
+	'answer': 'PresenterButtonPressed(string_param)'}
+}
